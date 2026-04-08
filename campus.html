@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Campus Life | Nexus Institute</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .campus-hero {
+            height: 60vh;
+            background: linear-gradient(rgba(11, 15, 26, 0.6), rgba(11, 15, 26, 0.9)), 
+                        url('https://images.unsplash.com/photo-1541339907198-e08756defefe?auto=format&fit=crop&w=1600&q=80') center/cover;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            margin-top: 80px;
+        }
+
+        .facility-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+            margin-top: -100px;
+            padding: 0 5%;
+            position: relative;
+            z-index: 10;
+        }
+
+        .facility-card {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(20px);
+            border: 1px solid var(--glass-border);
+            border-radius: 24px;
+            padding: 40px;
+            transition: var(--transition-smooth);
+            cursor: pointer;
+        }
+
+        .facility-card:hover {
+            background: rgba(59, 130, 246, 0.1);
+            border-color: #3b82f6;
+            transform: translateY(-10px);
+        }
+
+        .facility-icon {
+            font-size: 2rem;
+            margin-bottom: 20px;
+            display: block;
+        }
+
+        .gallery-section {
+            padding: 100px 5%;
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 20px;
+        }
+
+        .gallery-item {
+            position: relative;
+            border-radius: 20px;
+            overflow: hidden;
+            aspect-ratio: 4/3;
+            cursor: pointer;
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.1);
+        }
+
+        .gallery-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to top, rgba(11, 15, 26, 0.8), transparent);
+            display: flex;
+            align-items: flex-end;
+            padding: 20px;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .gallery-item:hover .gallery-overlay {
+            opacity: 1;
+        }
+
+        /* Simple Lightbox */
+        #lightbox {
+            position: fixed;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.95);
+            z-index: 2000;
+            display: none;
+            align-items: center;
+            justify-content: center;
+            padding: 40px;
+        }
+
+        #lightbox img {
+            max-width: 90%;
+            max-height: 90%;
+            border-radius: 10px;
+            box-shadow: 0 0 50px rgba(0,0,0,0.5);
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="logo"><strong>NEXUS</strong> UNIV</div>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="academics.html">Academics</a></li>
+            <li><a href="campus.html" style="color: #3b82f6;">Campus</a></li>
+            <li><a href="contact.html" class="btn btn-primary">Visit</a></li>
+        </ul>
+    </nav>
+
+    <header class="campus-hero reveal">
+        <div>
+            <h1 style="font-size: 4rem;">Living the Future</h1>
+            <p style="font-size: 1.2rem; opacity: 0.8;">Explore our state-of-the-art facilities and vibrant student culture.</p>
+        </div>
+    </header>
+
+    <div class="facility-grid">
+        <div class="facility-card reveal">
+            <span class="facility-icon">📚</span>
+            <h3>Omni-Library</h3>
+            <p>24/7 biometric access to 2M+ volumes and ultra-speed research nodes.</p>
+        </div>
+        <div class="facility-card reveal" style="transition-delay: 0.1s;">
+            <span class="facility-icon">🏠</span>
+            <h3>Nexus Pods</h3>
+            <p>Climate-controlled smart housing with integrated AI study assistants.</p>
+        </div>
+        <div class="facility-card reveal" style="transition-delay: 0.2s;">
+            <span class="facility-icon">🧪</span>
+            <h3>Core Labs</h3>
+            <p>Tier-1 research facilities for robotics, biotech, and quantum physics.</p>
+        </div>
+        <div class="facility-card reveal" style="transition-delay: 0.3s;">
+            <span class="facility-icon">🏆</span>
+            <h3>Titan Arena</h3>
+            <p>The continent's largest multi-sport complex and e-sports theater.</p>
+        </div>
+    </div>
+
+    <section class="gallery-section">
+        <h2 style="text-align: center; margin-bottom: 50px;">Campus Gallery</h2>
+        <div class="gallery-grid">
+            <div class="gallery-item reveal" onclick="openLightbox('https://images.unsplash.com/photo-152305085306e-8c3d3e7d9f39?auto=format&fit=crop&w=1200&q=80')">
+                <img src="https://images.unsplash.com/photo-152305085306e-8c3d3e7d9f39?auto=format&fit=crop&w=600&q=80" alt="Main Hall">
+                <div class="gallery-overlay"><span>Central Plaza</span></div>
+            </div>
+            <div class="gallery-item reveal" onclick="openLightbox('https://images.unsplash.com/photo-1562774053-701939374585?auto=format&fit=crop&w=1200&q=80')">
+                <img src="https://images.unsplash.com/photo-1562774053-701939374585?auto=format&fit=crop&w=600&q=80" alt="Auditorium">
+                <div class="gallery-overlay"><span>The Great Hall</span></div>
+            </div>
+            <div class="gallery-item reveal" onclick="openLightbox('https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=1200&q=80')">
+                <img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=600&q=80" alt="Robotics Lab">
+                <div class="gallery-overlay"><span>Quantum Lab</span></div>
+            </div>
+            <div class="gallery-item reveal" onclick="openLightbox('https://images.unsplash.com/photo-1503676260728-1c00da094a0b?auto=format&fit=crop&w=1200&q=80')">
+                <img src="https://images.unsplash.com/photo-1503676260728-1c00da094a0b?auto=format&fit=crop&w=600&q=80" alt="Learning Center">
+                <div class="gallery-overlay"><span>Collaborative Space</span></div>
+            </div>
+            <div class="gallery-item reveal" onclick="openLightbox('https://images.unsplash.com/photo-1517486808906-6ca8b3f04846?auto=format&fit=crop&w=1200&q=80')">
+                <img src="https://images.unsplash.com/photo-1517486808906-6ca8b3f04846?auto=format&fit=crop&w=600&q=80" alt="Student Lounge">
+                <div class="gallery-overlay"><span>The Hub</span></div>
+            </div>
+            <div class="gallery-item reveal" onclick="openLightbox('https://images.unsplash.com/photo-1576497614313-d31090569d82?auto=format&fit=crop&w=1200&q=80')">
+                <img src="https://images.unsplash.com/photo-1576497614313-d31090569d82?auto=format&fit=crop&w=600&q=80" alt="Dormitory">
+                <div class="gallery-overlay"><span>Luxury Suites</span></div>
+            </div>
+        </div>
+    </section>
+
+    <div id="lightbox" onclick="this.style.display='none'">
+        <img id="lightboxImg" src="" alt="Zoomed view">
+    </div>
+
+    <footer>
+        <div class="footer-content">
+            <div>
+                <h3>NEXUS UNIV</h3>
+                <p>Excellence in every corner.</p>
+            </div>
+            <div>
+                <h4>Social</h4>
+                <p>Instagram / Facebook / Virtual Tour</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            &copy; 2026 Nexus University. All Rights Reserved.
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+        function openLightbox(src) {
+            const lb = document.getElementById('lightbox');
+            const img = document.getElementById('lightboxImg');
+            img.src = src;
+            lb.style.display = 'flex';
+        }
+    </script>
+</body>
+</html>
