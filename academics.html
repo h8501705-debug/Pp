@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Academics | Nexus Institute</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .academics-hero {
+            padding: 140px 5% 60px;
+            text-align: center;
+            background: radial-gradient(circle at 50% 0%, rgba(59, 130, 246, 0.1), transparent);
+        }
+
+        .accordion-container {
+            max-width: 900px;
+            margin: 0 auto 100px;
+        }
+
+        .accordion-item {
+            background: var(--bg-card);
+            border: 1px solid var(--glass-border);
+            border-radius: 20px;
+            margin-bottom: 20px;
+            overflow: hidden;
+            transition: var(--transition-smooth);
+            backdrop-filter: blur(10px);
+        }
+
+        .accordion-header {
+            padding: 30px;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: var(--transition-smooth);
+        }
+
+        .accordion-header:hover {
+            background: rgba(255, 255, 255, 0.05);
+        }
+
+        .course-title {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .course-icon {
+            font-size: 1.5rem;
+            background: var(--accent-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .accordion-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+            background: rgba(0, 0, 0, 0.2);
+        }
+
+        .accordion-item.active {
+            border-color: rgba(139, 92, 246, 0.5);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        }
+
+        .accordion-item.active .accordion-content {
+            max-height: 1000px;
+            padding-bottom: 30px;
+        }
+
+        .accordion-item.active .plus-minus {
+            transform: rotate(45deg);
+        }
+
+        .content-inner {
+            padding: 0 30px;
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 40px;
+        }
+
+        .plus-minus {
+            font-size: 1.5rem;
+            transition: transform 0.4s ease;
+            color: var(--text-muted);
+        }
+
+        .course-meta {
+            list-style: none;
+            border-left: 1px solid var(--glass-border);
+            padding-left: 20px;
+        }
+
+        .course-meta li {
+            margin-bottom: 15px;
+            font-size: 0.9rem;
+        }
+
+        .course-meta span {
+            display: block;
+            color: var(--text-muted);
+            font-weight: 300;
+        }
+
+        @media (max-width: 768px) {
+            .content-inner { grid-template-columns: 1fr; }
+            .course-meta { border-left: none; border-top: 1px solid var(--glass-border); padding: 20px 0 0 0; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="logo"><strong>NEXUS</strong> UNIV</div>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="academics.html" style="color: #3b82f6;">Academics</a></li>
+            <li><a href="admissions.html">Admissions</a></li>
+            <li><a href="contact.html" class="btn btn-primary">Apply</a></li>
+        </ul>
+    </nav>
+
+    <header class="academics-hero reveal">
+        <h1>World-Class Academics</h1>
+        <p>Explore our cutting-edge programs designed for the leaders of the 2026 digital economy.</p>
+    </header>
+
+    <section>
+        <div class="accordion-container">
+            <div class="accordion-item reveal">
+                <div class="accordion-header">
+                    <div class="course-title">
+                        <span class="course-icon">01</span>
+                        <h3>School of Computer Science & AI</h3>
+                    </div>
+                    <span class="plus-minus">+</span>
+                </div>
+                <div class="accordion-content">
+                    <div class="content-inner">
+                        <div>
+                            <p>Our flagship program focuses on the convergence of Machine Learning, Neural Networks, and Quantum Computing. Students engage in hands-on research from year one in our proprietary Nexus AI Labs.</p>
+                            <br>
+                            <p>Key areas include Deep Learning, Natural Language Processing, and Cyber-Physical Systems.</p>
+                        </div>
+                        <ul class="course-meta">
+                            <li><span>Duration</span>4 Years Undergraduate</li>
+                            <li><span>Degree</span>Bachelor of Science (Honors)</li>
+                            <li><span>Career Path</span>AI Engineer, Data Scientist, Systems Architect</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="accordion-item reveal" style="transition-delay: 0.1s;">
+                <div class="accordion-header">
+                    <div class="course-title">
+                        <span class="course-icon">02</span>
+                        <h3>Sustainable Energy Engineering</h3>
+                    </div>
+                    <span class="plus-minus">+</span>
+                </div>
+                <div class="accordion-content">
+                    <div class="content-inner">
+                        <div>
+                            <p>Addressing the global climate crisis through technological innovation. This program covers the physics of photovoltaics, wind turbine aerodynamics, and next-generation battery storage systems.</p>
+                        </div>
+                        <ul class="course-meta">
+                            <li><span>Duration</span>4 Years Undergraduate</li>
+                            <li><span>Degree</span>B.Eng Sustainable Energy</li>
+                            <li><span>Career Path</span>Grid Manager, Renewable Specialist, Energy Analyst</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="accordion-item reveal" style="transition-delay: 0.2s;">
+                <div class="accordion-header">
+                    <div class="course-title">
+                        <span class="course-icon">03</span>
+                        <h3>Digital Business & Fintech</h3>
+                    </div>
+                    <span class="plus-minus">+</span>
+                </div>
+                <div class="accordion-content">
+                    <div class="content-inner">
+                        <div>
+                            <p>Modern commerce requires a mastery of blockchain, algorithmic trading, and digital marketing. Our business school integrates traditional economics with decentralized finance (DeFi) ecosystems.</p>
+                        </div>
+                        <ul class="course-meta">
+                            <li><span>Duration</span>3 Years Undergraduate</li>
+                            <li><span>Degree</span>B.A. International Business</li>
+                            <li><span>Career Path</span>Fintech Founder, Digital Strategist, Asset Manager</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="accordion-item reveal" style="transition-delay: 0.3s;">
+                <div class="accordion-header">
+                    <div class="course-title">
+                        <span class="course-icon">04</span>
+                        <h3>Biomedical Innovation</h3>
+                    </div>
+                    <span class="plus-minus">+</span>
+                </div>
+                <div class="accordion-content">
+                    <div class="content-inner">
+                        <div>
+                            <p>Intersecting biology and engineering to create life-saving technologies. Students work on CRISPR gene editing, 3D bioprinting, and advanced prosthetics.</p>
+                        </div>
+                        <ul class="course-meta">
+                            <li><span>Duration</span>4 Years Undergraduate</li>
+                            <li><span>Degree</span>B.Sc. Bio-Engineering</li>
+                            <li><span>Career Path</span>Medical Researcher, Biotech Consultant</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-content">
+            <div>
+                <h3>NEXUS UNIV</h3>
+                <p>Developing the future since 1998.</p>
+            </div>
+            <div>
+                <h4>Contact</h4>
+                <p>admissions@nexus.edu</p>
+                <p>+1 800 NEXUS ED</p>
+            </div>
+            <div>
+                <h4>Follow Us</h4>
+                <p>LinkedIn / Twitter / Instagram</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            &copy; 2026 Nexus University. All Rights Reserved.
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+        document.querySelectorAll('.accordion-header').forEach(header => {
+            header.addEventListener('click', () => {
+                const item = header.parentElement;
+                const isActive = item.classList.contains('active');
+                
+                // Close all other items
+                document.querySelectorAll('.accordion-item').forEach(el => el.classList.remove('active'));
+                
+                // Toggle current item
+                if (!isActive) {
+                    item.classList.add('active');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
