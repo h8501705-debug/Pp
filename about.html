@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us | Nexus Institute</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Local overrides for Timeline and Gallery */
+        .timeline {
+            position: relative;
+            max-width: 800px;
+            margin: 50px auto;
+            padding: 20px 0;
+        }
+        .timeline::before {
+            content: '';
+            position: absolute;
+            width: 2px;
+            background: var(--glass-border);
+            top: 0; bottom: 0; left: 50%;
+            transform: translateX(-50%);
+        }
+        .timeline-item {
+            margin-bottom: 50px;
+            position: relative;
+            width: 50%;
+            padding: 0 40px;
+        }
+        .timeline-item:nth-child(odd) { left: 0; text-align: right; }
+        .timeline-item:nth-child(even) { left: 50%; text-align: left; }
+        .timeline-item::after {
+            content: '';
+            position: absolute;
+            width: 16px;
+            height: 16px;
+            background: #8b5cf6;
+            border-radius: 50%;
+            top: 0;
+            left: calc(100% - 8px);
+            box-shadow: 0 0 10px var(--accent-glow);
+        }
+        .timeline-item:nth-child(even)::after { left: -8px; }
+        
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 15px;
+        }
+        .gallery-img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            border-radius: 15px;
+            transition: var(--transition-smooth);
+            cursor: pointer;
+        }
+        .gallery-img:hover { transform: scale(1.03); filter: brightness(1.1); }
+        
+        @media (max-width: 768px) {
+            .timeline::before { left: 20px; }
+            .timeline-item { width: 100%; text-align: left !important; padding-left: 50px; }
+            .timeline-item::after { left: 12px !important; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="logo"><strong>NEXUS</strong> UNIV</div>
+        <ul class="nav-links">
+            <li><a href="index.html#home">Home</a></li>
+            <li><a href="index.html#academics">Academics</a></li>
+            <li><a href="index.html#campus">Campus</a></li>
+            <li><a href="index.html#events">Events</a></li>
+            <li><a href="index.html#apply" class="btn btn-primary">Apply Now</a></li>
+        </ul>
+    </nav>
+
+    <section style="margin-top: 100px;">
+        <div class="grid" style="align-items: center;">
+            <div class="reveal">
+                <h1 style="font-size: 3rem; margin-bottom: 20px;">Heritage of Innovation</h1>
+                <p style="color: var(--text-muted); font-size: 1.1rem;">Founded on the principle of limitless discovery, Nexus Institute has been at the forefront of academic evolution for over five decades. We bridge the gap between theoretical excellence and real-world application.</p>
+            </div>
+            <div class="reveal" style="transition-delay: 0.2s;">
+                <img src="https://images.unsplash.com/photo-1525921429624-479b6a26d84d?auto=format&fit=crop&w=800&q=80" alt="Campus" style="width: 100%; border-radius: 30px; border: 1px solid var(--glass-border);">
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <div class="grid">
+            <div class="card">
+                <h2 style="color: #3b82f6; margin-bottom: 15px;">Our Vision</h2>
+                <p>To become a global beacon of knowledge where technology and humanity converge to solve the world's most pressing challenges.</p>
+            </div>
+            <div class="card">
+                <h2 style="color: #8b5cf6; margin-bottom: 15px;">Our Mission</h2>
+                <p>To provide an inclusive, high-tech environment that fosters critical thinking, creativity, and the pursuit of excellence in every student.</p>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <h2 style="text-align: center; margin-bottom: 60px;">Our Journey</h2>
+        <div class="timeline">
+            <div class="timeline-item reveal">
+                <h3>1975</h3>
+                <p>Foundation of the original Nexus Technical College.</p>
+            </div>
+            <div class="timeline-item reveal">
+                <h3>1998</h3>
+                <p>Inauguration of the Research & Development wing.</p>
+            </div>
+            <div class="timeline-item reveal">
+                <h3>2015</h3>
+                <p>Transitioned to a fully digital, paperless campus.</p>
+            </div>
+            <div class="timeline-item reveal">
+                <h3>2026</h3>
+                <p>Ranked #1 in Global Innovation & Student Success.</p>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <h2 style="margin-bottom: 40px;">Campus Gallery</h2>
+        <div class="gallery-grid">
+            <img class="gallery-img reveal" src="https://images.unsplash.com/photo-1541339907198-e08756defefe?auto=format&fit=crop&w=500&q=60" alt="Gallery 1">
+            <img class="gallery-img reveal" src="https://images.unsplash.com/photo-1498243639391-a31503ee058b?auto=format&fit=crop&w=500&q=60" alt="Gallery 2">
+            <img class="gallery-img reveal" src="https://images.unsplash.com/photo-1523240715639-99f84d3e414c?auto=format&fit=crop&w=500&q=60" alt="Gallery 3">
+            <img class="gallery-img reveal" src="https://images.unsplash.com/photo-1517486808906-6ca8b3f04846?auto=format&fit=crop&w=500&q=60" alt="Gallery 4">
+            <img class="gallery-img reveal" src="https://images.unsplash.com/photo-1523580494863-6f3031224c94?auto=format&fit=crop&w=500&q=60" alt="Gallery 5">
+            <img class="gallery-img reveal" src="https://images.unsplash.com/photo-1562774053-701939374585?auto=format&fit=crop&w=500&q=60" alt="Gallery 6">
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-content">
+            <div>
+                <h3>NEXUS UNIV</h3>
+                <p>Empowering the next generation.</p>
+            </div>
+            <div>
+                <h4>Contact</h4>
+                <p>info@nexus.edu</p>
+                <p>+1 (555) 000-1111</p>
+            </div>
+            <div>
+                <h4>Follow Us</h4>
+                <p>Twitter / LinkedIn / Instagram</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            &copy; 2026 Nexus University. All Rights Reserved.
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
