@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admissions | Nexus Institute</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .step-container {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            max-width: 800px;
+            margin: 40px auto;
+        }
+        .step-card {
+            display: flex;
+            align-items: center;
+            gap: 25px;
+            background: var(--bg-card);
+            border: 1px solid var(--glass-border);
+            padding: 30px;
+            border-radius: 20px;
+            position: relative;
+        }
+        .step-number {
+            font-size: 2rem;
+            font-weight: 700;
+            background: var(--accent-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            min-width: 50px;
+        }
+        .doc-list {
+            list-style: none;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            margin-top: 20px;
+        }
+        .doc-item {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 15px;
+            border-radius: 12px;
+            border-left: 3px solid #3b82f6;
+            font-size: 0.9rem;
+        }
+        .eligibility-box {
+            border: 1px dashed #8b5cf6;
+            padding: 25px;
+            border-radius: 20px;
+            background: rgba(139, 92, 246, 0.05);
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="logo"><strong>NEXUS</strong> UNIV</div>
+        <ul class="nav-links">
+            <li><a href="index.html#home">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="academics.html">Academics</a></li>
+            <li><a href="admissions.html" style="color: #3b82f6;">Admissions</a></li>
+            <li><a href="index.html#apply" class="btn btn-primary">Apply Now</a></li>
+        </ul>
+    </nav>
+
+    <section style="margin-top: 100px; text-align: center;">
+        <div class="reveal">
+            <h1 style="font-size: 3.5rem; margin-bottom: 20px;">Start Your Journey</h1>
+            <p style="color: var(--text-muted);">Admission process for the Academic Year 2026-27 is now live.</p>
+        </div>
+    </section>
+
+    <section id="eligibility">
+        <h2 style="margin-bottom: 30px;">Eligibility Criteria</h2>
+        <div class="grid">
+            <div class="eligibility-box reveal">
+                <h4 style="color: #3b82f6; margin-bottom: 10px;">Undergraduate</h4>
+                <p>Minimum 75% aggregate in High School (10+2) with core subjects relevant to the chosen major. Proficiency in English is mandatory.</p>
+            </div>
+            <div class="eligibility-box reveal" style="transition-delay: 0.1s;">
+                <h4 style="color: #8b5cf6; margin-bottom: 10px;">Postgraduate</h4>
+                <p>A Bachelor's degree with a minimum CGPA of 3.0/4.0. Valid scores in GRE/GMAT may be required for specific technical programs.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="steps">
+        <h2 style="text-align: center; margin-bottom: 40px;">Application Process</h2>
+        <div class="step-container">
+            <div class="step-card reveal">
+                <div class="step-number">01</div>
+                <div>
+                    <h4>Online Registration</h4>
+                    <p>Create your account on the Nexus Portal and verify your email.</p>
+                </div>
+            </div>
+            <div class="step-card reveal" style="transition-delay: 0.1s;">
+                <div class="step-number">02</div>
+                <div>
+                    <h4>Submit Application</h4>
+                    <p>Fill in academic details, upload your SOP, and choose your preferred courses.</p>
+                </div>
+            </div>
+            <div class="step-card reveal" style="transition-delay: 0.2s;">
+                <div class="step-number">03</div>
+                <div>
+                    <h4>Entrance Assessment</h4>
+                    <p>Appear for the Nexus Aptitude Test (NAT) or submit equivalent global scores.</p>
+                </div>
+            </div>
+            <div class="step-card reveal" style="transition-delay: 0.3s;">
+                <div class="step-number">04</div>
+                <div>
+                    <h4>Personal Interview</h4>
+                    <p>Shortlisted candidates will be invited for a virtual interaction with the faculty board.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="documents">
+        <div class="card">
+            <h2 style="margin-bottom: 20px;">Documents Required</h2>
+            <p style="color: var(--text-muted); margin-bottom: 20px;">Ensure you have digital copies of the following before starting:</p>
+            <div class="doc-list">
+                <div class="doc-item">Academic Transcripts</div>
+                <div class="doc-item">Statement of Purpose (SOP)</div>
+                <div class="doc-item">Two Letters of Recommendation</div>
+                <div class="doc-item">Passport Size Photographs</div>
+                <div class="doc-item">Proof of Identity (Passport/ID)</div>
+                <div class="doc-item">Language Proficiency Certificate</div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-content">
+            <div>
+                <h3>NEXUS UNIV</h3>
+                <p>Building tomorrow's leaders today.</p>
+            </div>
+            <div>
+                <h4>Support</h4>
+                <p>admissions@nexus.edu</p>
+                <p>Help Desk: 1-800-NEXUS</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            &copy; 2026 Nexus University. All Rights Reserved.
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
